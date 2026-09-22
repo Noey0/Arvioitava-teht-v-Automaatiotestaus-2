@@ -9,9 +9,8 @@ test("validateEmail hyväksyy tavallisen sähköpostiosoitteen", () => {
   assert.strictEqual(result, true);
 });
 
-(test("validateEmail hylkää virheellisen sähköpostiosoitteen"),
-  () => {
-    const result = validateEmail("epäkelpo@sähköposti");
+test("validateEmail hylkää sähköpostiosoitteen ilman @-merkkiä", () => {
+  const result = validateEmail("opiskelija.example.com");
 
-    assert.strictEqual(result, false);
-  });
+  assert.strictEqual(result, false);
+});
