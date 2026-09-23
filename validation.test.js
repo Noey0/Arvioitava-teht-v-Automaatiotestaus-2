@@ -44,3 +44,27 @@ test("validateAge hylkää iän 121", () => {
 
   assert.strictEqual(result, false);
 });
+
+test("validateEmail hylkää tyhjän sähköpostiosoitteen", () => {
+  const result = validateEmail("");
+
+  assert.strictEqual(result, false);
+});
+
+test("validatePassword hylkää tyhjän salasanan", () => {
+  const result = validatePassword("");
+
+  assert.strictEqual(result, false);
+});
+
+test("validateAge hylkää iän merkkijonona", () => {
+  const result = validateAge("18");
+
+  assert.strictEqual(validateAge("18"), false);
+});
+
+test("validateAge hylkää desimaali-iän", () => {
+  const result = validateAge(18.5);
+
+  assert.strictEqual(validateAge(18.5), false);
+});
