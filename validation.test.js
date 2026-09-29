@@ -68,3 +68,9 @@ test("validateAge hylkää desimaali-iän", () => {
 
   assert.strictEqual(validateAge(18.5), false);
 });
+
+test("validateEmail hylkää virheellisen sähköpostiosoitteen", () => {
+  const result = validateEmail("@test.");
+
+  assert.strictEqual(result, false);
+});
